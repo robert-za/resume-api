@@ -56,32 +56,3 @@ def add_person(person: schemas.PersonCreate, session: Session = Depends(get_sess
     session.commit()
     session.refresh(obj)
     return obj
-
-
-# @app.get("/{id}")
-# def get_item(id: int, session: Session = Depends(get_session)):
-#     obj = session.query(schemas.Item).get(id)
-#     return obj
-
-# @app.post("/")
-# def add_item(item: schemas.Item, session: Session = Depends(get_session)):
-#     obj = schemas.Item(task = item.task)
-#     session.add(obj)
-#     session.commit()
-#     session.refresh(obj)
-#     return obj
-
-# @app.put("/{id}")
-# def update_item(id: int, item: schemas.Item, session: Session = Depends(get_session)):
-#     obj = session.query(schemas.Item).get(id)
-#     obj.task = item.task
-#     session.commit()
-#     return obj
-
-# @app.delete("/{id}")
-# def delete_item(id: int, session: Session = Depends(get_session)):
-#     obj = session.query(schemas.Item).get(id)
-#     session.delete(obj)
-#     session.commit()
-#     session.close()
-#     return f"Item id#{id} has been removed."
