@@ -32,18 +32,18 @@ def add_person(person: schemas.PersonCreate, session: Session = Depends(get_sess
         language=[models.Language(language=language.language, level=language.level) for language in person.language],
         work_experience=[models.WorkExperience(
             company=work_experience.company,
-            # date_started=work_experience.date_started,
-            # date_ended=work_experience.date_ended,
+            date_started=work_experience.date_started,
+            date_ended=work_experience.date_ended,
             position=work_experience.position,
-            # skills=work_experience.skills,
+            skill=work_experience.skill,
             description=work_experience.description
         ) for work_experience in person.work_experience],
         education=[models.Education(
             name=education.name,
             faculty=education.faculty,
             degree=education.degree,
-            # date_started=education.date_started,
-            # date_ended=education.date_ended,
+            date_started=education.date_started,
+            date_ended=education.date_ended,
             graduated=education.graduated
         ) for education in person.education],
         achievements=[models.Achievements(
