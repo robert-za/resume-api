@@ -14,5 +14,5 @@ def test_add_person():
     assert response.status_code == 201
     assert response.json()['birthdate'] == '2000-01-01'
     assert response.json()['first_name'] == 'Robert'
-    assert response.json()['last_name'] == 'Zaniewski'
+    assert response.json()['last_name'] == 'Z.'
     assert "id" in response.json()
